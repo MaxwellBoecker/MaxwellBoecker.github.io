@@ -14,7 +14,11 @@
  */
 function isArray(value) {
     // YOUR CODE BELOW HERE //
-    
+    if(Array.isArray(value) === true){
+        return true;
+    }else{
+        return false;
+    }
     
     
     
@@ -31,7 +35,14 @@ function isArray(value) {
  */
 function isObject(value) {
     // YOUR CODE BELOW HERE //
-    
+    /* Here I'm using a conditional which checks that typeof returns object but not null, array or date
+    * this way the only object that will return true is an object as collection
+    */
+    if(typeof value === 'object' && Array.isArray(value) === false && value !== null && value instanceof Date === false){
+        return true;
+    }else{
+        return false;
+    }
     
     
     
@@ -46,7 +57,15 @@ function isObject(value) {
  */
 function isCollection(value) {
     // YOUR CODE BELOW HERE //
-    
+    /*here we are doing the same as above only changing the first logical operator to or to ensure that true will be returned in the case that
+    * we receive either an object as collection or an array. however if we do not also provide the conditions excluding null and dates on the left side of the or operator
+    * then we will receive false positive because the two && statements are scoped within the or operator. thus it will print true for all values that satisfy typeof === 'object'
+    */
+    if(typeof value === 'object' && value !== null && value instanceof Date === false || Array.isArray(value) === true && value !== null && value instanceof Date === false){
+        return true;
+    }else{
+        return false;
+    }
     
     
     
@@ -74,8 +93,29 @@ function isCollection(value) {
  */ 
 function typeOf(value) {
     // YOUR CODE BELOW HERE //
-    
-    
+    /* im going to write if/else statements that evaluate instances of typeof value.  based on what the result of typeof value ends up being
+    * i will have the function return different values. I put object last that way i wouldn't have to put the exclusions as per above. If value were equal to array, null or date the code would have
+    * stopped running before it hit the typeof value === object.
+    */
+    if(Array.isArray(value) === true){
+    return 'array';
+  }else if(value instanceof Date === true){
+    return 'date';
+  }else if(typeof value === 'string'){
+    return 'string';
+  }else if(typeof value === 'number'){
+    return 'number';
+  }else if(typeof value === 'undefined'){
+    return 'undefined';
+  }else if(typeof value === 'boolean'){
+    return 'boolean';
+  }else if(value === null){
+    return 'null';
+  }else if(typeof value === 'function'){
+    return 'function';
+  }else if(typeof value === 'object'){
+    return 'object';
+  }
     
     
     // YOUR CODE ABOVE HERE //

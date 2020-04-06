@@ -23,7 +23,23 @@
  */
 function range(start, end) {
     // YOUR CODE GOES BELOW HERE //
+    /*To accomplish this task I will use a conditional statement and two for loops. The conditional will determine which loop to run, ascending or descending, based on 
+    * a comparison of the arguments given to the range function. The chosen for loop will cycle between the arguments given 
+    * and push them and each value in between into an array which will then be returned from the function
+    */
+    var myArray = [];
     
+    if(start < end){
+        for(let i = start; i <= end; i++){
+            myArray.push(i);
+            
+        }
+    }else if(start > end){
+        for(let i = start; i >= end; i--){
+            myArray.push(i);
+            
+        }
+    }return myArray;
     
     
     

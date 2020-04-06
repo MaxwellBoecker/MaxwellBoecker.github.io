@@ -21,9 +21,17 @@
 
 function reverseString(input) {
     // YOUR CODE GOES BELOW HERE //
+    /* here i will have to create an empty array and a for loop to cycle through the different indexes of the input string from last to first
+    * as the for loop cycles through, each new value it encounters is pushed into the array
+    * then the array is joined using the join operator. this is the return output
+    */
+  
+    var array = [];
     
-    
-    
+   for(var i = input.length-1; i >= 0; i--){
+     array.push(input[i]);
+   }return array.join('');
+  
     
     // YOUR CODE GOES ABOVE HERE //
 }
