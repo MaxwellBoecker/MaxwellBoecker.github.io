@@ -19,7 +19,9 @@
 // if/ if else/ else
 
 /* The if statement is composed of three parts: the keyword if, a parenthetical statement that evaluates a 
-* condition to a boolean value, and a code block contained within curly braces. 
+* condition to a boolean value, and a code block contained within curly braces. The code block inside a conditional will only
+* run if its conditional statement evaluates to true. After a condition evaluates to true, no other conditions will run. Thus it 
+* is important to structure conditional statements as not to prevent certain code blocks from running when they need to.
 *
 * The else if statement allows for a second(or Nth)
 * instantiation of the conditional phase provided the first conditional statement evaluates to false. It has the same syntax as the 
@@ -54,7 +56,14 @@ if(num < 6 && num > 0){
 
 // Switch Statements
 
-/* Switch statements are a concise way to evaluate many different conditions. They match an expression with a case and return an output. The essential features
+/* Switch statements differ in some ways from if/else statements. Whereas if/else statements can evaluate a range
+* of different conditions or values, the switch operator can only compare values to an integer, string, or enumerated value.
+* This makes if/else statements more a more adept tool for evaluating booleans. Switch is a good tool for when we need to 
+* find a match for many possible cases. The program will run faster in a switch statement because the interpreter knows that all the 
+* cases in a switch statement are the same type as the condition, thus it only has to compare for equality. If/else statements require
+* the compiler to go through the code to evaluate its conditions. The switch statement is also easier to edit.
+* 
+* They match an expression with a case and return an output. The essential features
 * of a switch statement are the keyword switch, the expression to be evaluated in parantheses, a code block delimited by curly braces, a case statement which
 * compares the value of the switch expression against the value of the case expression trying to return a match, a statement that will run if the case expression matches the 
 * switch expression, and a break statement which will halt the code after a match is found. The switch statement can end with a default statement, similar to the else statement 

@@ -54,64 +54,18 @@ function every(array, func) {
 
 
 function dominantDirection(string) {
-/* What I have gleaned so far is that we have to use the countby function 
-* in tandem with the stringcharacter function. 
-* The countby function takes a string and a function as arguments.
-* The function it takes will be the stringcharacter function. The string character function will perform an operation
-* on each character in the given string and return which script it is from. 
-* The string countby takes will be the string given to the dominant direction function. countBy employs a for of loop, whereby
-* it uses the characterString function to find out which script each character is from based on its
-* codeCharAt value and location in the SCRIPTS data set.If the character's script does not already have an object value inside the 
-* counts aray, one is created with a name and a count key that reflects how many instances of this
-* script exist in string. If the object exists, we just modify count. 
-* In the end we should be able to compare the different objects in the counts array and determine which one has the 
-* greatest count value.
-*/
-function characterScript(code) {
-  for (let script of SCRIPTS) {
-    if (script.ranges.some(([from, to]) => {
-      return code >= from && code < to;
-    })) {
-      return script;
-    }
+
+let countArr = countBy(string, function(text){
+  let characterInfo = characterScript(text.charCodeAt())
+  if(characterInfo){
+    return characterInfo.direction;
   }
-  return null;
-}
-
-function countBy(items, groupName) {
-  let counts = [];
-  for (let item of items) {
-    let name = groupName(item);
-    let known = counts.findIndex(c => c.name == name);
-    if (known == -1) {
-      counts.push({name, count: 1});
-    } else {
-      counts[known].count++;
-    }
-  }
-  return counts;
-}
-
-
-let scripts = countBy(string, char => {
-    let script = characterScript(char.codePointAt(0));
-    if(script !== null)
-    return script.direction;
-  });
-  if(scripts[0].count > scripts[1].count){
-    return scripts[0].name
-  }else{
-    return 'rtl'
-  }
-    
+});
   
-  
-  
-  
-
-
- 
-
+ countArr.sort(function(a, b){
+   return b.count - a.count;
+ })
+ return countArr[0].name;
 }
 
 

@@ -28,7 +28,9 @@
  //0. Examples of Simple Data Types
  
  // Number
+ // numbers can be positive, negative or decimals
  var num = 3;//the variable num is holding the number 3
+ var num1 = -1;// num1 holds -1
  
  // Boolean
  // A Boolean is a true/false value
@@ -36,7 +38,13 @@
  
  // String
  // A string is any set of characters between '' or " "
- var string = "my string";//the variable string now holds the string "my string"
+ /* Although strings are considered a simple data type, when assigned to 
+ * a variable they become a 'string object instance', and thus we can operate on these
+ * type of strings as if they are arrays; each character will have an index. These contrast with string primitive, which
+ * refers to an unitialized string.
+ */
+ var string = "my string";//the variable string now holds the string object "my string"
+ console.log(string[0])// will log 'm' to the console
  var stringTwo = '3er5tw4';//the variable stringTwo is also holding a string
  
  // Undefined
@@ -44,7 +52,7 @@
  
  var weather;
  
- console.log(weather);//returns undefined
+ console.log(weather);//logs undefined to the console
  
  // Null
  // The null data type also has only one value- null
@@ -56,12 +64,13 @@
  /* NaN or Not a Number is a numeric data type. It is the value returned 
  * from running an arithmetic operation which has a non numeric result
  */
- console.log(0/0);//returns NaN
+ console.log(0/0);//logs NaN to the console
  
- console.log(0/'a');//returns NaN
+ console.log(0/'a');//logs NaN to the console
  
  // Infinity and -Infinity
  // These are numeric data types which represent the concepts infinity and -infinity
+ console.log(Infinity)// logs Infinity to the console
  
  // 1. Complex Data Types
  
