@@ -1,9 +1,10 @@
 /* FUNCTIONS
 *
 * 0. A function is a program composed of statements that are executed upon function call. Functions can take arguments
-* where parameters have been specified and perform operations on these with the contained statements. They may optionally feature a return statement 
-* which returns a certain value from the execution of the function. After the return statement is hit, the function ceases to operate.
-* Let's take a look at the essential syntax of a function.
+* where parameters have been specified and perform operations on these with the contained statements. Parameters are the variables declared in the function declaration
+* which specify how many arguments can be taken by the function. Arguments are the actual data passed in to the function at function call. 
+* Functions may optionally feature a return statement which returns a certain value from the execution of the function. After the return statement 
+* is hit, the function ceases to operate. Let's take a look at the essential syntax of a function.
 */
 
 // 1. Function Syntax and Composition for a Non Anonymous Function
@@ -30,6 +31,9 @@ console.log(divide(6, 3));//prints 2 to the console
 
 /* This section will enumerate the various intersections of variables and functions insofar as they relate to scope.
 *
+* Understanding scope helps to understand how pieces of our code interact with one another. It helps to keep variables from accidentally being
+* reassigned and makes our code more flexible and reusable. We can use the same variable name many times in different local scopes without having them conflict
+* with one another. Redeclaring the same variable name in the same scope can lead to unexpected errors.
 * Variables declared with the var keyword can have one of two scopes, global scope or function scope. If the variable is declared within
 * the function, then it will only exist within the function. Trying to access the variable outside of the function code block will return an error. 
 * However, if the function has been declared outside the function then it will have global scope, and will exist inside the function as well as outside of it.
@@ -98,7 +102,7 @@ function outer(){
 let gscope1 = outer()
 
 
-/* In the above code the lexical enviornment of the function outer stores a reference to the global lexical enviornment. The lexical enviornment of the ananymous
+/* In the above code the lexical enviornment of the function outer stores a reference to the global lexical enviornment. The lexical enviornment of the anonymous
 * function which is returned inside of the outer function stores references to the lexical enviornment of its outer function and a reference to the global lexical enviornment.
 * It performs an operation on the variable fscope1 which is stored inside of the function, a variable that is not defined in the global scope.
 */

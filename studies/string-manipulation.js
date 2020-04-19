@@ -54,6 +54,42 @@ dessert[6];
 
 console.log(dessert[9]);// returns 'l'
 
+/** The slice method
+ * 
+ * The slice method extracts a section of a string and returns it without modifying the original string. The syntax is
+ * string.slice(start index, end index)
+ * 
+ */
+ var aString = 'I get hungrier every minute';
+ 
+ console.log(aString.slice(3, 14))// returns 'et hungrier'
+ 
+ /** The replace method
+  * 
+  * The replace method searches a string for a character or regular expression and returns a new string with the specified values replaced.
+  * The syntax is string.replace(string/char to be removed, replacement char/string)
+  * 
+  */
+ 
+ var bString = 'gonna let it burn';
+ 
+ var cString = bString.replace('burn', 'marinate');
+ 
+ console.log(cString)// logs 'gonna let it marinate' to the console
+ 
+ /** The indexOf method returns the index of the first occurrence of a character/specified text in a string
+  * The syntax is string.indexOf(character)
+  */
+ 
+ var dString = 'around the world';
+ 
+ console.log(dString.indexOf('t'));//logs 7 to the console.
+ 
+ console.log(dString.indexOf('world'));// logs 11 to the console.
+ 
+ 
+ 
+
 // 2. String Manipulation Operator
 
 /* Instead of using concat() we can use the simple addition operator +. We can also use the unary operator

@@ -52,7 +52,7 @@ for(var key in myObject){
 }
 
 
-// The While Loop
+// 3. The While Loop
 
 /* The while loop executes its code block for each increase in the incrementer until the starting condition becomes false.
 * Its kind of like saying, "while this is true, do that each time you check" The essential syntax is: keyword while, 
@@ -62,12 +62,19 @@ var x = 0;
 
 while(x < 20){
     x++
-    console.log(x);//prints the values 0 - 20 to the console
+    console.log(x);//prints the values 1 - 20 to the console
 }
 
 
+// 4. Infinite Loops
+/**
+ * Infinite loops are caused by incorrect definition of either ending condition or increment. The ending condition will never be reached, so
+ * they will never stop. An infinite loop will cause a program to crash.
+ */
 
-
-
+////   for(let i = 0; i < array.length; i--){}
+    
+//This will cause an infinite loop. The incrementer is set to be a decrementer. Because the ending condition, which is above 0 will
+// never be reached, this loop will continue on infinitely.
 
 

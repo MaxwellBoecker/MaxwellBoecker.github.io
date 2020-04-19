@@ -123,6 +123,29 @@
      //code block goes here
  }
  
+ 
+ // 2. Copy by Value vs. Copy by Reference
+ /**
+  * When variables are assigned the value of a simple data type, the actual value of that data type is stored in memory
+  * in the variable. By contrast, only the reference number in memory for a variable that has been assigned to a complex data
+  * type. The essential contrast between these two storage methods is that if two different variables have been assigned the number
+  * 2, and we reassign one of the variables to the value 1, the end result is that one variable will be assigned the value of 1 and 
+  * the other will be assigned the value of 2. However, if one object is initialized and then another object is assigned to the first object,
+  * the reference number is copied over from the first object to the second and changing either object will change them both. This is
+  * because changing one will store the change at the reference number, and because both objects are stored at the same reference number
+  * they will both feel the change.
+  * 
+  */
+  
+  var num = 2;
+  var num1 = 2;
+  num1 = 1;//reassigning num1
+  console.log(num);// num will still equal 2
+  
+  var obj = {food: 'pizza'};//initializing obj
+  var obj2 = obj;//setting obj equal to obj2. now they should have the same reference number
+  obj.drink = 'beer'; //adding the key/value pair drink/beer to obj. Let's see if this change makes it into obj2
+  console.log(obj2);//logs {food: 'pizza', drink: 'beer'} to the console
 
  
  
